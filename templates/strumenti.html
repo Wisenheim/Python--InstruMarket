@@ -1,0 +1,239 @@
+<! doctype  html>
+<html>
+<head>
+  <title> InstruMarket :: Strumenti</title>
+  <link href="{{url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+  <link href="{{url_for('static', filename='css/stylex.css') }}" rel='stylesheet' type='text/css' />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <script src="{{url_for('static', filename='js/jquery.min.js') }}"></script>
+  </head>
+  <body>
+    <div class="header" id="headerContent" >
+  		<div class="container">
+  			<div class="row">
+  			  <div class="col-md-12">
+  				 <div class="header-left">
+  					 <div class="logo">
+
+  						<a href="/"><img src="{{url_for('static', filename='images/logo.png') }}" alt=""/></a>
+  					 </div>
+  					 <div class="menu">
+  						  <a class="toggleMenu" href="#"><img src="{{url_for('static', filename='images/nav.png') }}" alt="" /></a>
+  						    <ul class="nav" id="nav">
+  						    	<li><a href="catalogo">Catalogo</a></li>
+
+                  {% if connesso %}
+  						    	              {% if tsm %}
+  						    	<li><a href="offertePSM">Offerte</a></li>
+  						    	<li><a href="scontiPSM">Sconti</a></li>
+                                  {% else %}
+  						    	<li><a href="offertePro">Offerte</a></li>
+  						    	<li><a href="scontiPro">Sconti</a></li>
+                                  {% endif %}
+  						    {% endif %}
+
+                    <li><a href="contatti">Contatti</a></li>
+  								<div class="clear"></div>
+  							</ul>
+  							<script type="text/javascript" src="{{url_for('static', filename='js/responsive-nav.js') }}"></script>
+  				    </div>
+  	    		    <div class="clear"></div>
+  	    	    </div>
+              <div class="sb-metod">
+                <select class="sb-search-metod" name="metods" form="ricerca">
+                  <option value="categoria">Categoria</option>
+                  <option value="prezzo">Prezzo</option>
+                  <option value="modello" selected="Selected">Modello</option>
+                </select>
+              </div>
+  	            <div class="header_right">
+  	    		  <!-- start search-->
+  				      <div class="search-box">
+  							<div id="sb-search" class="sb-search">
+  								<form id="ricerca" action ="/strumenti" autocomplete="on" method="post">
+  									<input class="sb-search-input" placeholder="Inserisci categoria di Strumento..." type="search" name="categ" id="search">
+  									<input class="sb-search-submit" type="submit" value="">
+  									<span class="sb-icon-search"> </span>
+  								</form>
+  							</div>
+  						</div>
+  						<!----search-scripts---->
+  						<script src="{{url_for('static', filename='js/classie.js') }}"></script>
+  						<script src="{{url_for('static', filename='js/uisearch.js') }}"></script>
+  						<script>
+  							new UISearch( document.getElementById( 'sb-search' ) );
+  						</script>
+  						<!----//search-scripts---->
+  				    <ul class="icon1 sub-icon1 profile_img">
+  					 <li><a class="active-icon c1" href="#"> </a>
+  						<ul class="sub-icon1 list">
+  						  <div class="product_control_buttons">
+  						  	<a href="#"><img src="{{url_for('static', filename='images/edit.png') }}" alt=""/></a>
+  						  		<a href="#"><img src="{{url_for('static', filename='images/close_edit.png') }}" alt=""/></a>
+  						  </div>
+  						   <div class="clear"></div>
+  						  <li class="list_img"><img src="{{url_for('static', filename='images/1.jpg') }}" alt=""/></li>
+  						  <li class="list_desc"><h4><a href="#">Vai al Carrello</a></h4><span class="actual">1 x €12.00</span></li>
+  						  <div class="login_buttons">
+  							 <div class="check_button"><a href="carrello">Carrello</a></div>
+
+                                                          {% if not connesso  %}
+
+                                                                   <div class="login_button"><a href="login">Accedi</a></div>
+                                                          {% else %}
+                                                                   <div class="login_button"><a href="http://localhost:5000/logout">Esci</a></div>
+                                                                   <div class="login_button"><a href="profilo">Profilo</a></div>
+
+                                                          {% endif %}
+
+
+
+  							 <div class="clear"></div>
+  						  </div>
+  						  <div class="clear"></div>
+  						</ul>
+  					 </li>
+  				   </ul>
+  		           <div class="clear"></div>
+  	       </div>
+  	      </div>
+  		 </div>
+  	  </div>
+  	</div>
+    <div class="main">
+      <div class="shop_top">
+   		   <div class="container">
+
+        {%- if vuota == true %}
+          <div>
+            <p class="cart"> Sembra che non ci sono strumenti con la ricerca scelta, clicca<a href="/"> Qui</a> per ritornare alla Home.</p>
+          </div>
+        {% else %}
+
+                   {%- for strum in strumentiPsm %}
+                   <div class="col-md-3 shop_box"><a href="viewInstru" name="id" value= "{{ strum.id }}" >
+                   <img src="{{url_for('static', filename=strum.path) }}" class="img-responsive" alt=""/>
+
+                   <span class="new-box">
+                     <span class="new-label">PSM</span>
+                   </span>
+                   <div class="shop_desc">
+                     <h3><a> {{ strum.id }} </a></h3>
+                     <p> {{ strum.categoria }} </p>
+                     <p>Strumenti per Scuole Musicali </p>
+                     <li class="shop_btn"><a href="#"> -{{ strum.sconto_applicato }}% </a></li>
+                     <span class="actual"> {{ strum.prezzo }} </span><br>
+                     <ul class="buttons">
+                       <li class="cart"><a href="index_carrello">Aggiungi al carrello</a></li>
+                       <li class="shop_btn"><a href="#">leggi +</a></li>
+                       <div class="clear"> </div>
+                       </ul>
+                     </div>
+                   </a></div>
+                  {%- endfor %}
+
+          {%- for strum in strumentiPro %}
+          <div class="col-md-3 shop_box"><a href="viewInstru" name="id" value= "{{ strum.id }}" >
+          <img src="{{url_for('static', filename=strum.path) }}" class="img-responsive" alt=""/>
+
+          <span class="new-box">
+            {% if strum.usato == false %}
+            <span class="new-label">Nuovo</span>
+            {% else %}
+            <span class="new-label">Usato</span>
+            {% endif %}
+          </span>
+          <div class="shop_desc">
+            <h3><a> {{ strum.id }} </a></h3>
+            <p> {{ strum.categoria }} </p>
+            <p>Strumenti Professionali </p>
+            <span class="reducedfrom" value="{{strum.id }}"> {{ strum.prezzo }} </span>
+            <span class="actual"> {{ strum.prezzo_proposto }} </span><br>
+            <ul class="buttons">
+              <li class="cart"><a href="index_carrello">Aggiungi al carrello</a></li>
+              <li class="shop_btn"><a href="#">leggi +</a></li>
+              <div class="clear"> </div>
+              </ul>
+            </div>
+          </a></div>
+           {%- endfor %}
+        {%- endif %}
+
+   		</div>
+   	 </div>
+   	</div>
+
+
+   		<div class="footer" id="footContent">
+   			<div class="container">
+   				<div class="row">
+   					<div class="col-md-3">
+   						<ul class="footer_box">
+   							<h4>Prodotti</h4>
+   							<li><a href="catalogo">Strumenti Professionali</a></li>
+   							<li><a href="catalogo">Strumenti ScuoleMusicali</a></li>
+   						</ul>
+   					</div>
+   					<div class="col-md-3">
+   						<ul class="footer_box">
+   							<h4>Guadagna con Noi</h4>
+   							<li><a href="#">Vendi su InstruMarket</a></li>
+   							<li><a href="#">Diventa Fornitore di InstruMarket</a></li>
+   							<li><a href="#">Promuovi i tuoi Prodotti</a></li>
+   							<li><a href="#">altri Servizi</a></li>
+   						</ul>
+   					</div>
+   					<div class="col-md-3">
+   						<ul class="footer_box">
+   							<h4>Supporto Cliente</h4>
+   							<li><a href="#">Contattaci</a></li>
+   							<li><a href="#">Spedizione e Traccia Ordine</a></li>
+   							<li><a href="#">Restituizione</a></li>
+   							<li><a href="#">Garanzia</a></li>
+   						</ul>
+   					</div>
+   					<div class="col-md-3">
+   						<ul class="footer_box">
+   							<h4>Newsletter</h4>
+   							<div class="footer_search">
+   				    		   <form>
+   				    			<input type="text" value="Inserire la mail..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Inserire la mail...';}">
+   				    			<input type="submit" value="Vai">
+   				    		   </form>
+   					        </div>
+   							<ul class="social">
+   							  <li class="facebook"><a href="#"><span> </span></a></li>
+   							  <li class="twitter"><a href="#"><span> </span></a></li>
+   							  <li class="instagram"><a href="#"><span> </span></a></li>
+   							  <li class="pinterest"><a href="#"><span> </span></a></li>
+   							  <li class="youtube"><a href="#"><span> </span></a></li>
+   						    </ul>
+
+   						</ul>
+   					</div>
+   				</div>
+   				<div class="row footer_bottom">
+   				    <div class="copy">
+   			           <p>© 2017 Template by <a href="http://nicoyardi.com" target="_blank">Yardi</a></p>
+   		            </div>
+   					  <dl id="sample" class="dropdown">
+   				        <dt><a href="#"><span>Cambia Paese</span></a></dt>
+   				        <dd>
+   				            <ul>
+   				                <li><a href="#">Australia<img class="flag" src="{{url_for('static', filename='images/as.png') }}" alt="" /><span class="value">AS</span></a></li>
+   				                <li><a href="#">Sri Lanka<img class="flag" src="{{url_for('static', filename='images/srl.png') }}" alt="" /><span class="value">SL</span></a></li>
+   				                <li><a href="#">Newziland<img class="flag" src="{{url_for('static', filename='images/nz.png') }}" alt="" /><span class="value">NZ</span></a></li>
+   				                <li><a href="#">Pakistan<img class="flag" src="{{url_for('static', filename='images/pk.png') }}" alt="" /><span class="value">Pk</span></a></li>
+   				                <li><a href="#">United Kingdom<img class="flag" src="{{url_for('static', filename='images/uk.png') }}" alt="" /><span class="value">UK</span></a></li>
+   				                <li><a href="#">United States<img class="flag" src="{{url_for('static', filename='images/us.png') }}" alt="" /><span class="value">US</span></a></li>
+   				            </ul>
+   				         </dd>
+   	   				  </dl>
+      				</div>
+   			</div>
+   		</div>
+   </body>
+   </html>

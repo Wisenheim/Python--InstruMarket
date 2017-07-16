@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>InstruMarket ::  Accedi</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="{{url_for('static', filename='css/animate.css') }}">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">InstruMarket<span></span></span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Accedi</h2>
+			</div>
+			<form action="http://localhost:5000/verificaCredenziali" method="post">
+                            <label for="username">Utente</label>
+                            <br/>
+                            <!--<input type="text" id="username">-->
+                            <input type="text" placeholder="Username" name="username" value="{{request.form.username }}">
+                            <br/>
+                            <label for="password">Password</label>
+                            <br/>
+                            <input type="password" placeholder="Password" name="password" value="{{request.form.password }}">
+                            <br/>
+                            <button type="submit">Entra</button>
+                            <br/>
+                            <a href="index_register"><p class="small">Nuovo? Registrati</p></a>
+                        </form>
+                        {% if error %}
+                        <p class="error"><strong>Error:</strong> {{ error }}
+													<a href="#"><p class="small">password dimentica?</p></a>
+                        {% endif %}
+		</div>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+</script>
+
+</html>

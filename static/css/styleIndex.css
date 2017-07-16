@@ -1,0 +1,468 @@
+/* CSS Document */
+body
+{
+	background:#E4E4E4 url(../images/boby.jpg) repeat-x;
+	color:#7F7F7F;
+	font-size:11px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin:0px;
+	padding:0px;
+}
+
+a {
+	color:#000000;
+	text-decoration:underline;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+.clear
+{
+	margin:0px;
+	padding:0px;
+	clear:both;
+}
+#wrapper
+{
+	width:946px;
+	margin:0 auto;
+}
+.headerzone
+{
+	width:946px;
+	background:url(../images/header.jpg);
+}
+
+.header {
+	height:100px;
+}
+.headerText
+{
+	width:200px;
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	padding:26px 0px 0px 194px;
+}
+.phone
+{
+	width:120px;
+	float:right;
+	padding:28px 0px 0px 10px;
+}
+.email
+{
+	width:110px;
+	padding:12px 0px 0px 5px;
+}
+
+/*	Menu Style Start here */
+
+.topmenu
+{
+	margin:0px 0px 0px 0px;
+	padding:8px 0px 5px 0px;
+}
+
+.topmenu ul {
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px; text-align:center;
+}
+
+.topmenu li  {
+	display:inline;
+	height:29px;
+	padding:0px 0px 5px 0px;
+	margin:0px 0px 0px 0px;
+}
+
+.topmenu li a {
+	font:bold 14px Arial, Helvetica, sans-serif;
+	color:#ffffff;
+	background:url(../images/menudevider.jpg) top right repeat-y;
+	text-decoration:none;
+	padding:8px 30px 5px 30px;
+	text-transform:uppercase;
+	font-style:italic;
+}
+
+.topmenu li a:hover {
+	color:#F9FDCF;
+	background:#626262;
+	text-decoration:none;
+}
+
+.topmenu li a.current {
+	color:#F9FDCF;
+	background:#626262;
+	text-decoration:none;
+}
+
+
+.topmenu li a.nonborder {
+	font:bold 14px Arial, Helvetica, sans-serif;
+	color:#ffffff;
+	background:none;
+	text-decoration:none;
+	padding:8px 12px 5px 12px;
+	font-style:italic;
+}
+
+
+.topmenu li a:hover.nonborder {
+	color:#F9FDCF;
+	background:#626262;
+	text-decoration:none;
+}
+	
+/*	Menu Style End here */
+.banner
+{
+	height:400px;
+	background:url(../images/struments.gif);
+	margin:20px 0px 0px 0px;
+
+}
+.features
+{
+	width:200px;
+	float:right;
+	padding:0px 0px 0px 0px;
+	margin:40px 40px 0px 0px;
+}
+.featuresText
+{
+	margin:0px 10px 0px 0px;
+	padding:5px 0px 0px 0px;
+}
+.featuresText ul
+{
+	margin:0px;
+	padding:0px;
+}
+.featuresText li
+{
+	margin:0px 0px 0px 0px;
+	padding:5px 0px 5px 25px;
+	font-size:12px;
+	color:#FFFFFF;
+	font-weight:bold;
+	list-style:none;
+	background:url(../images/star.gif) 0px 0px no-repeat;
+}
+h2
+{
+	margin:0px;
+	padding:0px;
+	color:#3D3D3D;
+	font-style:italic;
+	font-size:22px;
+}
+h1
+{
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	color:#3D3D3D;
+	font:20px Arial Black, Arial, Helvetica, sans-serif
+}
+.button
+{
+	text-align:left;
+	margin:12px 0px 0px 0px;
+}
+.bannerText
+{
+	width:500px;
+	padding:100px 40px 0px 0px;
+	float:right;
+}
+.blueText
+{
+	color:#448FC0;
+	font-weight:bold;
+}
+.workZone
+{
+	width:946px;
+	margin:0px;
+	padding:0px;
+}
+
+.buybutton {
+	padding:10px 0px 0px 5px;
+}
+
+.midBox
+{
+	background:url(../images/containermid.jpg) left top repeat-y;
+	float:left;
+}
+.topBox
+{
+	background:url(../images/containertop.jpg) left top no-repeat;
+	float:left;
+}
+.bottomBox
+{
+	background:url(../images/containerbottom.jpg) left bottom no-repeat;
+	float:left;
+}
+.workZoneRight
+{
+	 
+	float:right;
+}
+.leftBox
+{
+	width:290px;
+	float:left;
+}
+.rightBox
+{
+	width:610px;
+	margin:20px 30px 0px 10px;
+	padding:0px 0px 50px 0px;
+	border-bottom:#999999 1px solid;
+}
+
+.rightBox.inner{border:none}
+
+
+.rightBox2
+{
+	width:610px;
+	
+	margin:0px 30px 0px 10px;
+	padding:0px 0px 50px 0px;
+}
+.box1
+{
+	padding:20px 20px 10px 30px;
+}
+.whiteText
+{
+    width:200px;
+	padding:0px 0px 0px 0px;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+.cdBox
+{
+	width:80px;
+	height:78px;
+	float:left;
+	padding:10px 0px 0px 0px;
+}
+.leftText
+{
+	width:130px;
+	float:left;
+	padding:10px 0px 0px 10px;
+}
+.box2
+{
+	padding:0px 20px 20px 30px;
+}
+.whiteText
+{
+    width:200px;
+	padding:0px 0px 0px 0px;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+.cdBox
+{
+	width:80px;
+	height:78px;
+	float:left;
+	padding:10px 0px 0px 0px;
+}
+.leftText
+{
+	width:130px;
+	float:left;
+	padding:10px 0px 0px 10px;
+}
+.box3
+{
+	padding:0px 20px 20px 30px;
+}
+.whiteText
+{
+    width:200px;
+	padding:0px 0px 0px 0px;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+.cdBox
+{
+	width:80px;
+	height:78px;
+	float:left;
+	padding:10px 0px 0px 0px;
+}
+.leftText
+{
+	width:130px;
+	float:left;
+	padding:10px 0px 0px 10px;
+}
+.boldText
+{
+	color:#646464;
+	font-weight:bold;
+}
+.tunesBox
+{
+	margin:0px;
+	padding:0px 0px 0px 0px;
+	width:400px;
+	float:left;
+}
+.downloadText
+{
+	width:400px;
+	color:#ADADAD;
+	padding:10px 0px 10px 0px;
+	text-align:justify;
+	font-weight:bold;
+}
+.rightCd
+{
+	margin:0px;
+	padding:20px 0px 0px 0px;
+	width:200px;
+	float:right;
+}
+.productContainer
+{
+	margin-top:20px;
+}
+.pic1
+{
+	width:97px;
+	height:227px;
+	float:left;
+	padding:0px 10px 0px 0px;
+	border-right:1px #CCCCCC solid;
+}
+.pic2
+{
+	width:204px;
+	height:227px;
+	float:left;
+	padding:1px 0px 0px 0px;
+	border-right:1px #CCCCCC solid;
+}
+.pic3
+{
+	width:142px;
+	height:227px;
+	float:left;
+	padding:0px 5px 0px 0px;
+	border-right:1px #CCCCCC solid;
+}
+.pic4
+{
+	width:142px;
+	height:227px;
+	float:left;
+	padding:0px 0px 0px 0px;
+}
+.picText1
+{
+	border-top:1px #CCCCCC solid;
+	padding:10px 0px 10px 0px;
+	text-align:center;
+}
+.picText2
+{
+	border-top:1px #CCCCCC solid;
+	padding:10px 0px 10px 0px;
+	text-align:center;
+}
+.picText3
+{
+	border-top:1px #CCCCCC solid;
+	padding:10px 0px 10px 0px;
+	text-align:center;
+}
+.picText4
+{
+	border-top:1px #CCCCCC solid;
+	padding:10px 0px 10px 0px;
+	text-align:center;
+}
+.footer
+{
+	width:946px;
+	height:88px;
+	background:url(../images/footer.gif) no-repeat;
+	padding:30px 0px 0px 0px;
+	margin:20px 0px 0px 0px;
+}
+.footer ul
+{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px; text-align:center;
+}
+.footer li
+{
+	display:inline;
+	margin:0px 0px 0px 0px;
+	padding:0px 10px 0px 10px; border-left:1px solid #c2c2c2;
+}
+
+.footer li.first{border:none}
+
+.footer li a
+{
+	color:#C2C2C2;
+	font-weight:bold;
+	font-size:12px;
+	padding:0px 5px 0px 5px;
+	text-decoration:none;
+}
+.footer li a:hover{color:#FFFFFF;}
+.footer li a.current{color:#FFFFFF;}
+.line
+{
+	color:#C2C2C2;
+}
+
+
+
+
+/* inner pages css start */
+h1.inner{font:20px tahoma, Arial; color:#000; font-weight:100; margin:0px; padding:8px 0px 10px 0; text-decoration:none}
+h1.inner span{font:24px tahoma, Arial; color:#000; font-weight:100; margin:0px; padding:25px 0px 10px 0px; background:none}
+.aboutus-img{float:right; border:4px solid #dcdcda;	margin:0px 0px 10px 20px;}
+h5{font:15px Myriad Pro, Arial, Helvetica, sans-serif; color:#000; font-weight:100; padding:0px 0px 5px 0px;	border-bottom:1px dotted #000;	margin:0px 0px 10px 0px; background:none }
+h6.inner{font:17px Myriad Pro, Arial, Helvetica, sans-serif; color:#000; font-weight:100; padding:0px 0px 5px 0px;	margin:0px 0px 0px 0px; background:none }
+.aboutcolumnzone{padding:20px 0px 16px 0px;}
+.aboutcolumn1{width:48%; float:left; margin:0px 0px 10px 0px;}
+.aboutcolumn2{width:48%; float:right; margin:0px 0px 10px 0px;}
+.abouticon{float:left; margin:0px 20px 0px 0px;}
+.insidereadmore{padding:10px 0px 10px 0px;}
+.insidereadmore a{color:#5D2D23; font-size:14px; text-decoration:none}
+.insidereadmore a:hover{text-decoration:underline}
+
+a.projects{color:#5D2D23; font-size:14px; text-decoration:underline}
+a:hover.projects{text-decoration:none}
+
+input.button{color:#ffffff;	background:#414141;	font:bold 11px Arial, Helvetica, sans-serif; text-decoration:none; padding:10px 10px; margin:0px 5px 5px 0;	border:1px solid #000;}
+input.button:hover{cursor:pointer; color:#cccccc;}
+.project-img{float:right; margin-left:20px;	border: 6px solid #dcdcda;}
+.whiteheading{font:30px Myriad Pro, Arial; color:#000; font-weight:100;	padding:0px; margin:25px 0px 20px 0px;}
+.ourprojectrow{margin-bottom:20px; border-bottom:1px dotted #000; padding-bottom:10px;}
+.servicecolumnzone{padding:20px 0px 16px 0px;}
+.servicecolumn1{width:48%; float:left; margin:0px 0px 10px 0px;}
+.servicecolumn2{width:48%; float:right;	margin:0px 0px 10px 0px;}
+.blog-posted-row{padding:3px; background:#dcdcda}
+
+.blog-posted-row a{color:#5D2D23; font-size:14px; text-decoration:underline; padding:0 0 0 8px}
+.blog-posted-row a:hover{text-decoration:none}
+/* inner pages css ends */
